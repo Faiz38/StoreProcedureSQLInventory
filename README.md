@@ -8,3 +8,5 @@
 - [ ] supplierID dgn BrandID kena tukar supaya boleh berulang dlm satu table di file tables
 
 - [ ] supplier dgn brand searching guna id disp apa yg patut dkt file updateSP
+
+Modification by Agent Hitman Faris
