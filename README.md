@@ -1,4 +1,4 @@
-# StoreProcedureSQLInventory
+# Store Procedure SQL Inventory
 Modification by Agent Hitman Faris
 
 ![visitors](https://vbr.wocr.tk/badge?page_id=AgentHitmanFaris.AgentHitmanFaris&color=00cf00)
