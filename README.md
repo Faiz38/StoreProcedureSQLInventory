@@ -5,9 +5,11 @@ Modification by Agent Hitman Faris
 
 ## Currently working on this project
 > - [x] Make synchonization on t_order andvt_recieved
-> - [ ] Make update quantity on product inventory and keep track of unit left
-> - [ ] Auto Update date when order and received order
-> - [ ] Auto Subtract value for remaining not received order
+> - [x] Make update quantity on product inventory and keep track of unit left
+> - [x] Auto Update date when order and received order
+> - [x] Auto Subtract value for remaining not received order
+
+-If Issue occur during testing please open Issue on for this branch
 
 
 ### Here are some ideas to get you started:
