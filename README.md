@@ -5,7 +5,7 @@ Modification by Agent Hitman Faris
 
 ## Currently working on this project
 > - [ ] Make synchonization on t_order andvt_recieved
-> - [ ] Make update quntity on product inventory and keep track of unit left
+> - [ ] Make update quantity on product inventory and keep track of unit left
 
 
 ### Here are some ideas to get you started:
