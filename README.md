@@ -4,8 +4,10 @@ Modification by Agent Hitman Faris
 ![visitors](https://vbr.wocr.tk/badge?page_id=AgentHitmanFaris.AgentHitmanFaris&color=00cf00)
 
 ## Currently working on this project
-> - [ ] Make synchonization on t_order andvt_recieved
+> - [x] Make synchonization on t_order andvt_recieved
 > - [ ] Make update quantity on product inventory and keep track of unit left
+> - [ ] Auto Update date when order and received order
+> - [ ] Auto Subtract value for remaining not received order
 
 
 ### Here are some ideas to get you started:
