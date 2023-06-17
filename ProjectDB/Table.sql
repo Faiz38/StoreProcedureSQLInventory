@@ -65,19 +65,16 @@ CREATE TABLE t_Order (
   ProductID NVARCHAR(20) NOT NULL,
   OrderDate NVARCHAR(20) NOT NULL,
   OrderStatus NVARCHAR(20) NOT NULL,
-  ProductName NVARCHAR(50) NOT NULL,
+  OrderQuantity INT NOT NULL,
   PRIMARY KEY (OrderID),
   --FOREIGN KEY (ProductID) REFERENCES t_ProductRegister(ProductID)
 );
-
 CREATE TABLE t_Receive (
-  ReceiveID INT IDENTITY(1,1) NOT NULL,
   OrderID INT NOT NULL,
   OrderDate NVARCHAR(20) NOT NULL,
   OrderStatus NVARCHAR(20) NOT NULL,
   OrderQuantity INT NOT NULL,
   ReceivedStatus NVARCHAR(50) NOT NULL,
-  PRIMARY KEY (ReceiveID),
   FOREIGN KEY (OrderID) REFERENCES t_Order(OrderID)
 );
 

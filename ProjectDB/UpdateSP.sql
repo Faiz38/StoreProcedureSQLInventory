@@ -106,7 +106,7 @@ BEGIN
   END
 END;
 
-
+select* from t_Supplier
 EXEC sp_UpdateData
   @ProductID = 'P123',
   @ProductName = 'New Proajdsiuct Name',
