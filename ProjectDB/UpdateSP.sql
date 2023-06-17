@@ -25,7 +25,8 @@ ALTER PROCEDURE sp_UpdateData
   @OrderStatus NVARCHAR(20) = NULL,
   @ProductNameOrder NVARCHAR(50) = NULL,
   @ReceiveID INT = NULL,
-  @ReceivedStatus NVARCHAR(50) = NULL
+  @ReceivedStatus NVARCHAR(50) = NULL,
+  @OrderQuantity INT =NULL
 AS
 BEGIN
   -- Update t_ProductInventory based on ProductID
@@ -88,16 +89,15 @@ BEGIN
       ProductID = COALESCE(@ProductID, ProductID),
       OrderDate = COALESCE(@OrderDate, OrderDate),
       OrderStatus = COALESCE(@OrderStatus, OrderStatus),
-      ProductName = COALESCE(@ProductNameOrder, ProductName)
+      ProductName = COALESCE(@OrderQuantity, OrderQuantity)
     WHERE OrderID = @OrderID;
   END
 
   -- Update t_Receive based on ReceiveID
-  IF (@ReceiveID IS NOT NULL)
+  IF (@OrderID IS NOT NULL)
   BEGIN
     UPDATE t_Receive
     SET
-      OrderID = COALESCE(@OrderID, OrderID),
       OrderDate = COALESCE(@OrderDate, OrderDate),
       OrderStatus = COALESCE(@OrderStatus, OrderStatus),
       OrderQuantity = COALESCE(@ProductQuantity, OrderQuantity),
@@ -108,6 +108,6 @@ END;
 
 select* from t_Supplier
 EXEC sp_UpdateData
-  @ProductID = 'P123',
+  @ProductID = 'PD9876',
   @ProductName = 'New Proajdsiuct Name',
   @ProductCategory = 'New Cat[psdjnegory';
