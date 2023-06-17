@@ -28,7 +28,7 @@ BEGIN
 END;
 
 EXEC InsertProductData
-  @ProductID = 'PD9876',
+  @ProductID = 'PD123',
   @ProductName = 'Product 1',
   @ProductCategory = 'Category A',
   @CurrentUnitLeft = 10,
@@ -37,3 +37,5 @@ EXEC InsertProductData
   @ProductUnitSold = 5,
   @ProductTotalValue = 54.95,
   @ProductNameOrder = 'Product 1';
+
+  SELECT * FROM t_ProductSales

@@ -63,18 +63,22 @@ CREATE TABLE t_Brand (
 CREATE TABLE t_Order (
   OrderID INT IDENTITY(1,1) NOT NULL,
   ProductID NVARCHAR(20) NOT NULL,
-  OrderDate NVARCHAR(20) NOT NULL,
+  OrderDate DATETIME NOT NULL,
   OrderStatus NVARCHAR(20) NOT NULL,
   OrderQuantity INT NOT NULL,
   PRIMARY KEY (OrderID),
   --FOREIGN KEY (ProductID) REFERENCES t_ProductRegister(ProductID)
 );
+
 CREATE TABLE t_Receive (
   OrderID INT NOT NULL,
-  OrderDate NVARCHAR(20) NOT NULL,
+  ProductID NVARCHAR(20) NOT NULL,
+  OrderDate DATETIME NOT NULL,
   OrderStatus NVARCHAR(20) NOT NULL,
   OrderQuantity INT NOT NULL,
-  ReceivedStatus NVARCHAR(50) NOT NULL,
+  OrderReceivedQuantity INT NOT NULL,
+  RemainingOrderQuantity INT,
+  ReceivedOrderDate DATETIME,
   FOREIGN KEY (OrderID) REFERENCES t_Order(OrderID)
 );
 

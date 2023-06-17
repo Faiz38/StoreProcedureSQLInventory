@@ -13,7 +13,7 @@ BEGIN
 END;
 
 EXEC sp_RegisterProduct
-  @ProductID = 'P123',
+  @ProductID = 'PD123',
   @ProductName = 'New Product',
   @ProductCategory = 'Category',
   @ProductQuantity = 100,
