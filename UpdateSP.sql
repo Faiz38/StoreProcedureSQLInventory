@@ -24,9 +24,7 @@ CREATE PROCEDURE sp_UpdateData
   @OrderDate NVARCHAR(20) = NULL,
   @OrderStatus NVARCHAR(20) = NULL,
   @ProductNameOrder NVARCHAR(50) = NULL,
-  @ReceiveID INT = NULL,
-  @ReceivedStatus NVARCHAR(50) = NULL,
-  @OrderQuantity INT =NULL
+  @OrderReceivedQuantity INT =NULL
 AS
 BEGIN
   -- Update t_ProductInventory based on ProductID
@@ -94,15 +92,12 @@ BEGIN
   END
 
   -- Update t_Receive based on ReceiveID
-  IF (@OrderID IS NOT NULL)
+  IF (@OrderID IS NOT NULL AND @OrderReceivedQuantity IS NOT NULL)
   BEGIN
-    UPDATE t_Receive
-    SET
-      OrderDate = COALESCE(@OrderDate, OrderDate),
-      OrderStatus = COALESCE(@OrderStatus, OrderStatus),
-      OrderQuantity = COALESCE(@ProductQuantity, OrderQuantity),
-      ReceivedStatus = COALESCE(@ReceivedStatus, ReceivedStatus)
-    WHERE ReceiveID = @ReceiveID;
+    EXEC sp_AddToReceive
+      @OrderID = @OrderID,
+      @OrderStatus = @OrderStatus,
+      @OrderReceivedQuantity = @OrderReceivedQuantity;
   END
 END;
 

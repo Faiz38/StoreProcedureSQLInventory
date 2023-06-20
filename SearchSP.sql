@@ -33,8 +33,7 @@ BEGIN
     o.OrderStatus,
     -- Select the desired columns from t_Order
 
-    r.OrderID,
-    r.ProductID
+    r.OrderID
     -- Select the desired columns from t_Receive
 
   FROM t_ProductInventory pi
