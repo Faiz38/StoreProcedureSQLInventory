@@ -1,4 +1,4 @@
-CREATE PROCEDURE sp_UpdateData
+ALTER PROCEDURE sp_UpdateData
   @ProductID NVARCHAR(20) = NULL,
   @ProductName NVARCHAR(50) = NULL,
   @ProductCategory NVARCHAR(50) = NULL,
@@ -86,9 +86,8 @@ BEGIN
     SET
       ProductID = COALESCE(@ProductID, ProductID),
       OrderDate = COALESCE(@OrderDate, OrderDate),
-      OrderStatus = COALESCE(@OrderStatus, OrderStatus),
-      OrderReceivedQuantity = COALESCE(@OrderReceivedQuantity, OrderReceivedQuantity)
-    WHERE OrderID = @OrderID;
+      OrderStatus = COALESCE(@OrderStatus, OrderStatus)
+      WHERE OrderID = @OrderID;
   END
 
   -- Update t_Receive based on ReceiveID
@@ -101,10 +100,13 @@ BEGIN
   END
 END;
 
-select* from t_Supplier
+select* from t_ProductInventory
+select* from t_ProductSales
 
 --Test
 EXEC sp_UpdateData
-  @ProductID = 'PD9876',
-  @ProductName = 'New Proajdsiuct Name',
-  @ProductCategory = 'New Cat[psdjnegory';
+  @ProductID = 'PD123',
+  @ProductQuantity = 1,
+  @ProductUnitPrice = 100,
+  @ProductName = 'New Proajdsiuct Name';
+
