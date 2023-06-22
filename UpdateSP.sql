@@ -87,7 +87,7 @@ BEGIN
       ProductID = COALESCE(@ProductID, ProductID),
       OrderDate = COALESCE(@OrderDate, OrderDate),
       OrderStatus = COALESCE(@OrderStatus, OrderStatus),
-      ProductName = COALESCE(@OrderQuantity, OrderQuantity)
+      OrderQuantity = COALESCE(@OrderQuantity, OrderQuantity)
     WHERE OrderID = @OrderID;
   END
 
@@ -102,7 +102,7 @@ BEGIN
 END;
 
 select* from t_Supplier
-
+--Test
 EXEC sp_UpdateData
   @ProductID = 'PD9876',
   @ProductName = 'New Proajdsiuct Name',
