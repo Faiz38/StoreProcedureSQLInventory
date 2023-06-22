@@ -30,20 +30,20 @@ BEGIN
 END;
 
 EXEC sp_AddBrandAndSupplier
-  @SupplierID = 'S123',
-  @SupplierName = 'Supplier Name',
-  @SupplierContact = 'Supplier Contact',
-  @SupplierTitle = 'Supplier Title',
-  @SupplierAddress = 'Supplier Address',
-  @SupplierCity = 'Supplier City',
-  @SupplierCountry = 'Supplier Country',
-  @SupplierPhone = 'Supplier Phone',
-  @SupplierEmail = 'Supplier Email',
-  @SupplierWebsite = 'Supplier Website';
+  @SupplierID = 'S124',
+  @SupplierName = 'Amani',
+  @SupplierContact = '04-398183',
+  @SupplierTitle = 'Datin Dr. Ir. Ts.',
+  @SupplierAddress = 'Lot 25',
+  @SupplierCity = 'Kota Bharu',
+  @SupplierCountry = 'Kelantan',
+  @SupplierPhone = '014-2832891',
+  @SupplierEmail = 'datin_amani@gmail.com',
+  @SupplierWebsite = 'datin_amani.com';
 
 
   EXEC sp_AddBrandAndSupplier
-  @BrandID = 'B123',
-  @BrandName = 'Brand Name',
-  @BrandWebsite = 'Brand Website';
+  @BrandID = 'B124',
+  @BrandName = 'Samsung',
+  @BrandWebsite = 'Samsungmy.com';
 

@@ -58,7 +58,8 @@ BEGIN
     UPDATE t_Brand
     SET
       BrandName = COALESCE(@BrandName, BrandName),
-      BrandWebsite = COALESCE(@BrandWebsite, BrandWebsite)
+      BrandWebsite = COALESCE(@BrandWebsite, BrandWebsite),
+	  BrandUpdated = GETDATE()
     WHERE BrandID = @BrandID;
   END
 
@@ -75,7 +76,8 @@ BEGIN
       SupplierCountry = COALESCE(@SupplierCountry, SupplierCountry),
       SupplierPhone = COALESCE(@SupplierPhone, SupplierPhone),
       SupplierEmail = COALESCE(@SupplierEmail, SupplierEmail),
-      SupplierWebsite = COALESCE(@SupplierWebsite, SupplierWebsite)
+      SupplierWebsite = COALESCE(@SupplierWebsite, SupplierWebsite),
+	  SupplierUpdated = GETDATE()
     WHERE SupplierID = @SupplierID;
   END
 
@@ -105,8 +107,11 @@ select* from t_ProductSales
 
 --Test
 EXEC sp_UpdateData
-  @ProductID = 'PD123',
-  @ProductQuantity = 1,
-  @ProductUnitPrice = 100,
-  @ProductName = 'New Proajdsiuct Name';
+  @ProductID = 'PD124',
+  @ProductTotalValue= 99900
+
+  --Test2
+EXEC sp_UpdateData
+  @BrandID = 'B123',
+  @BrandWebsite= 'new website 1000'
 

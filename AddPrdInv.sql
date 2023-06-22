@@ -1,5 +1,4 @@
--- Create the stored procedure for inserting into t_ProductInventory, t_ProductSales, and t_Order
-CREATE PROCEDURE InsertProductData
+ALTER PROCEDURE InsertProductData
   @ProductID NVARCHAR(20),
   @ProductName NVARCHAR(50),
   @ProductCategory NVARCHAR(50),
@@ -7,9 +6,7 @@ CREATE PROCEDURE InsertProductData
   @ProductQuantity INT,
   @ProductUnitPrice FLOAT,
   @ProductUnitSold INT,
-  @ProductTotalValue FLOAT,
-  @ProductNameOrder NVARCHAR(50)
-
+  @ProductTotalValue FLOAT OUTPUT
 AS
 BEGIN
   SET NOCOUNT ON;
@@ -17,6 +14,9 @@ BEGIN
   -- Insert into t_ProductInventory
   INSERT INTO t_ProductInventory (ProductID, ProductName, ProductCategory, CurrentUnitLeft)
   VALUES (@ProductID, @ProductName, @ProductCategory, @CurrentUnitLeft);
+
+  -- Calculate ProductTotalValue
+  SET @ProductTotalValue = @ProductUnitPrice * @ProductUnitSold;
 
   -- Insert into t_ProductSales
   DECLARE @InventoryID INT;
@@ -27,15 +27,15 @@ BEGIN
 
 END;
 
+
 EXEC InsertProductData
-  @ProductID = 'PD123',
-  @ProductName = 'Product 1',
-  @ProductCategory = 'Category A',
-  @CurrentUnitLeft = 10,
-  @ProductQuantity = 5,
-  @ProductUnitPrice = 10.99,
-  @ProductUnitSold = 5,
-  @ProductTotalValue = 54.95,
-  @ProductNameOrder = 'Product 1';
+  @ProductID = 'PD124',
+  @ProductName = 'Samsung',
+  @ProductCategory = 'Smartphone',
+  @CurrentUnitLeft = 45,
+  @ProductQuantity = 100,
+  @ProductUnitPrice = 999,
+  @ProductUnitSold = 100,
+  @ProductTotalValue = 54.95;
 
   SELECT * FROM t_ProductSales

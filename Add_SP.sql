@@ -9,9 +9,9 @@ BEGIN
 END;
 
 EXEC sp_RegisterProduct
-  @ProductID = 'PD123',
-  @SupplierID = 'S123',
-  @BrandID = 'B123';
+  @ProductID = 'PD124',
+  @SupplierID = 'S124',
+  @BrandID = 'B124';
 
   select * from t_ProductRegister
 
