@@ -57,3 +57,8 @@ Modification by Agent Hitman Faris
 <p align="center">
 <img src ="https://metrics.lecoq.io/AgentHitmanFaris?template=classic&projects=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&projects=false&projects.limit=4&projects.descriptions=false&config.timezone=Asia%2FKuala_Lumpur)">
 </p>
+
+<h2>Developer</h2>
+<a href="https://github.com/Faiz38/StoreProcedureSQLInventory/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Faiz38/StoreProcedureSQLInventory" />
+</a>
