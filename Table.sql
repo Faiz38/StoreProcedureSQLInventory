@@ -1,10 +1,20 @@
+CREATE TABLE t_ProductRegister (
+  ProductID NVARCHAR(20) NOT NULL,
+  SupplierID NVARCHAR(20) NOT NULL,
+  BrandID NVARCHAR(20) NOT NULL,
+  PRIMARY KEY (ProductID)
+
+);
+
 CREATE TABLE t_ProductInventory (
   InventoryID INT IDENTITY(1,1) NOT NULL,
   ProductID NVARCHAR(20) NOT NULL,
   ProductName NVARCHAR(50) NOT NULL,
   ProductCategory NVARCHAR(50) NOT NULL,
   CurrentUnitLeft INT NOT NULL,
-  PRIMARY KEY (InventoryID)
+  PRIMARY KEY (InventoryID),
+
+  FOREIGN KEY (ProductID) REFERENCES t_ProductRegister(ProductID)
 );
 
 CREATE TABLE t_ProductSales (
@@ -19,14 +29,6 @@ CREATE TABLE t_ProductSales (
   ProductTotalValue FLOAT NOT NULL,
   PRIMARY KEY (SalesID),
   FOREIGN KEY (InventoryID) REFERENCES t_ProductInventory(InventoryID)
-);
-
-CREATE TABLE t_ProductRegister (
-  ProductID NVARCHAR(20) NOT NULL,
-  SupplierID NVARCHAR(20) NOT NULL,
-  BrandID NVARCHAR(20) NOT NULL,
-  PRIMARY KEY (ProductID)
-
 );
 
 CREATE TABLE t_Supplier (

@@ -1,4 +1,4 @@
-ALTER PROCEDURE sp_AddBrandAndSupplier
+CREATE PROCEDURE sp_AddBrandAndSupplier
   @SupplierID NVARCHAR(20) = NULL,
   @BrandID NVARCHAR(20) = NULL,
   @SupplierName NVARCHAR(50) = NULL,
