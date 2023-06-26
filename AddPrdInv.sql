@@ -35,7 +35,7 @@ END;
 
 
 EXEC InsertProductData
-  @ProductID = 'A425',
+  @ProductID = 'P001',
   @ProductName = 'Product 1',
   @ProductCategory = 'Category A',
   @CurrentUnitLeft = 10,

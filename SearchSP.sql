@@ -145,13 +145,13 @@ END
 select *from t_ProductRegister
 
 EXEC sp_SearchRecords 
-@ProductID = PD123;
+@ProductID = P001;
 
 EXEC sp_SearchRecords 
-@SupplierID = S123;
+@SupplierID = S002;
 
 EXEC sp_SearchRecords 
-@BrandID = B123;
+@BrandID = B003;
 
 EXEC sp_SearchRecords 
 @SalesID = 1;

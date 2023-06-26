@@ -25,6 +25,7 @@ CREATE TABLE t_ProductRegister (
   ProductID NVARCHAR(20) NOT NULL,
   SupplierID NVARCHAR(20) NOT NULL,
   BrandID NVARCHAR(20) NOT NULL,
+  PRIMARY KEY (ProductID)
 
 );
 
@@ -41,6 +42,7 @@ CREATE TABLE t_Supplier (
   SupplierWebsite NVARCHAR(20) NOT NULL,
   SupplierCreated NVARCHAR(20) NOT NULL,
   SupplierUpdated NVARCHAR(20) NOT NULL,
+  PRIMARY KEY (SupplierID)
 
   --FOREIGN KEY (SupplierID) REFERENCES t_ProductRegister(SupplierID)
 );
@@ -51,6 +53,7 @@ CREATE TABLE t_Brand (
   BrandWebsite NVARCHAR(20) NOT NULL,
   BrandCreated NVARCHAR(20) NOT NULL,
   BrandUpdated NVARCHAR(20) NOT NULL,
+  PRIMARY KEY (BrandID)
 
   --FOREIGN KEY (BrandID) REFERENCES t_ProductRegister(BrandID)
 );
@@ -74,6 +77,7 @@ CREATE TABLE t_Receive (
   OrderReceivedQuantity INT NOT NULL,
   RemainingOrderQuantity INT,
   ReceivedOrderDate DATETIME,
+  FOREIGN KEY (OrderID) REFERENCES t_Order(OrderID)
   );
 
 

@@ -54,7 +54,7 @@ EXEC sp_DeleteData
   @ProductID = 'PD002';
 
 EXEC sp_DeleteData
-  @BrandID = 'B002';
+  @BrandID = 'B003';
 
 EXEC sp_DeleteData
   @SupplierID = 'S002';

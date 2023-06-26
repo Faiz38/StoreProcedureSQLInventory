@@ -24,7 +24,7 @@ BEGIN
   ELSE
   BEGIN
     -- Handle the case when the @ProductID does not exist in the other table or is not equal to '4'
-    RAISERROR ('The specified ProductID does not exist or is wrong ProductID.', 16, 1);
+    RAISERROR ('The specified SupplierID does not exist or is wrong SupplierID.', 16, 1);
     RETURN;
   END
 
@@ -38,13 +38,13 @@ BEGIN
   ELSE
   BEGIN
     -- Handle the case when the @ProductID does not exist in the other table or is not equal to '4'
-    RAISERROR ('The specified ProductID does not exist or is wrong ProductID.', 16, 1);
+    RAISERROR ('The specified BrandID does not exist or is wrong BrandID.', 16, 1);
     RETURN;
 	END
 END;
 
 EXEC sp_AddBrandAndSupplier
-  @SupplierID = 'S112',
+  @SupplierID = 'S001',
   @SupplierName = 'Supplier Name',
   @SupplierContact = 'Supplier Contact',
   @SupplierTitle = 'Supplier Title',
@@ -57,7 +57,7 @@ EXEC sp_AddBrandAndSupplier
 
 
   EXEC sp_AddBrandAndSupplier
-  @BrandID = 'B002',
+  @BrandID = 'B001',
   @BrandName = 'Brand Name',
   @BrandWebsite = 'Brand Website';
 
