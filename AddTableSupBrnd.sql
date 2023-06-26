@@ -44,7 +44,7 @@ BEGIN
 END;
 
 EXEC sp_AddBrandAndSupplier
-  @SupplierID = 'S001',
+  @SupplierID = 'S002',
   @SupplierName = 'Supplier Name',
   @SupplierContact = 'Supplier Contact',
   @SupplierTitle = 'Supplier Title',

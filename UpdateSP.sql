@@ -1,4 +1,4 @@
-ALTER PROCEDURE sp_UpdateData
+CREATE PROCEDURE sp_UpdateData
   @ProductID NVARCHAR(20) = NULL,
   @ProductName NVARCHAR(50) = NULL,
   @ProductCategory NVARCHAR(50) = NULL,
@@ -132,7 +132,7 @@ select* from t_ProductSales
 
 --Test
 EXEC sp_UpdateData
-  @ProductID = 'PD002',
+  @ProductID = 'P002',
   @ProductQuantity = 1,
   @ProductUnitPrice = 100,
   @ProductName = 'New Proajdsiuct Name';
@@ -142,9 +142,10 @@ EXEC sp_UpdateData
   @SupplierName = 'New Name3'
 
 EXEC sp_UpdateData
-  @BrandID = 'B002',
+  @BrandID = 'B001',
   @BrandName = 'New Name3'
+
 EXEC sp_UpdateData
   @OrderID = 1,
-  @OrderReceivedQuantity = 300
+  @OrderReceivedQuantity = 5
 

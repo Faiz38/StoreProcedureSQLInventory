@@ -1,4 +1,4 @@
-ALTER PROCEDURE sp_DeleteData
+CREATE PROCEDURE sp_DeleteData
   @ProductID NVARCHAR(20) = NULL,
   @BrandID NVARCHAR(20) = NULL,
   @SupplierID NVARCHAR(20) = NULL,
@@ -51,10 +51,10 @@ BEGIN
 END;
 
 EXEC sp_DeleteData
-  @ProductID = 'PD002';
+  @ProductID = 'P003';
 
 EXEC sp_DeleteData
-  @BrandID = 'B003';
+  @BrandID = 'B001';
 
 EXEC sp_DeleteData
   @SupplierID = 'S002';
