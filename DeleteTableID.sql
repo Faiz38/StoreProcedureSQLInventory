@@ -1,4 +1,4 @@
-CREATE PROCEDURE sp_DeleteData
+ALTER PROCEDURE sp_DeleteData
   @ProductID NVARCHAR(20) = NULL,
   @BrandID NVARCHAR(20) = NULL,
   @SupplierID NVARCHAR(20) = NULL,

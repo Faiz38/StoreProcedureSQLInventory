@@ -138,12 +138,12 @@ EXEC sp_UpdateData
   @ProductName = 'New Proajdsiuct Name';
 
 EXEC sp_UpdateData
-  @SupplierID = 'S002',
-  @SupplierName = 'New Name3'
+  @SupplierID = 'S001',
+  @SupplierWebsite = 'bintang@emas.com'
 
 EXEC sp_UpdateData
   @BrandID = 'B001',
-  @BrandName = 'New Name3'
+  @BrandWebsite = 'Samsung.com.sg'
 
 EXEC sp_UpdateData
   @OrderID = 1,

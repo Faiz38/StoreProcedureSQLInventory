@@ -5,9 +5,7 @@ ALTER PROCEDURE InsertProductData
   @CurrentUnitLeft INT,
   @ProductQuantity INT,
   @ProductUnitPrice FLOAT,
-  @ProductUnitSold INT,
-  @ProductTotalValue FLOAT,
-  @ProductNameOrder NVARCHAR(50)
+  @ProductUnitSold INT
 AS
 BEGIN
   SET NOCOUNT ON;
@@ -28,6 +26,10 @@ BEGIN
     RETURN;
   END
 
+  -- Calculate @ProductTotalValue
+  DECLARE @ProductTotalValue FLOAT;
+  SET @ProductTotalValue = @ProductUnitPrice * @ProductUnitSold;
+
   -- Insert into t_ProductInventory
   INSERT INTO t_ProductInventory (ProductID, ProductName, ProductCategory, CurrentUnitLeft)
   VALUES (@ProductID, @ProductName, @ProductCategory, @CurrentUnitLeft);
@@ -41,16 +43,13 @@ BEGIN
 END;
 
 
-
 EXEC InsertProductData
-  @ProductID = 'P004',
-  @ProductName = 'Product 1',
-  @ProductCategory = 'Category A',
-  @CurrentUnitLeft = 10,
-  @ProductQuantity = 5,
-  @ProductUnitPrice = 10.99,
-  @ProductUnitSold = 5,
-  @ProductTotalValue = 54.95,
-  @ProductNameOrder = 'Product 1';
+  @ProductID = 'P001',
+  @ProductName = 'Samsung A54',
+  @ProductCategory = 'Smartphone',
+  @CurrentUnitLeft = 100,
+  @ProductQuantity = 1000,
+  @ProductUnitPrice = 1599,
+  @ProductUnitSold = 23
 
   SELECT * FROM t_ProductInventory

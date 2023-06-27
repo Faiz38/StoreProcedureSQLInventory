@@ -1,4 +1,4 @@
-CREATE PROCEDURE sp_AddBrandAndSupplier
+ALTER PROCEDURE sp_AddBrandAndSupplier
   @SupplierID NVARCHAR(20) = NULL,
   @BrandID NVARCHAR(20) = NULL,
   @SupplierName NVARCHAR(50) = NULL,
@@ -44,20 +44,20 @@ BEGIN
 END;
 
 EXEC sp_AddBrandAndSupplier
-  @SupplierID = 'S002',
-  @SupplierName = 'Supplier Name',
-  @SupplierContact = 'Supplier Contact',
-  @SupplierTitle = 'Supplier Title',
-  @SupplierAddress = 'Supplier Address',
-  @SupplierCity = 'Supplier City',
-  @SupplierCountry = 'Supplier Country',
-  @SupplierPhone = 'Supplier Phone',
-  @SupplierEmail = 'Supplier Email',
-  @SupplierWebsite = 'Supplier Website';
+  @SupplierID = 'S001',
+  @SupplierName = 'BintangEmas sdn. bhd.',
+  @SupplierContact = '045678910',
+  @SupplierTitle = 'Mr',
+  @SupplierAddress = 'Geargetown',
+  @SupplierCity = 'Pulau Pinang',
+  @SupplierCountry = 'Malaysia',
+  @SupplierPhone = '015-556789',
+  @SupplierEmail = 'bintang@emas',
+  @SupplierWebsite = 'bintang.emas';
 
 
   EXEC sp_AddBrandAndSupplier
   @BrandID = 'B001',
-  @BrandName = 'Brand Name',
-  @BrandWebsite = 'Brand Website';
+  @BrandName = 'Samsung',
+  @BrandWebsite = 'Samsung.com.my';
 
